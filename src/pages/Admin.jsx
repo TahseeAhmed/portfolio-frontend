@@ -145,6 +145,26 @@ function AdminLogin({ onLogin }) {
             )}
           </button>
         </form>
+
+        {/* ── Info strip ── */}
+        <div className="mt-8 pt-6 border-t border-slate/30 flex flex-col gap-3">
+          {[
+            {
+              icon: <Shield size={14} />,
+              text: "Secured with JWT authentication",
+            },
+            {
+              icon: <CheckCircle size={14} />,
+              text: "MongoDB · Real-time sync",
+            },
+            { icon: <Eye size={14} />, text: "Admin access only" },
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-3 text-muted">
+              <span className="opacity-50">{item.icon}</span>
+              <span className="text-xs font-mono">{item.text}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
